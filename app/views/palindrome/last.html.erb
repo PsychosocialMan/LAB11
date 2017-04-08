@@ -1,0 +1,24 @@
+<center>
+  <% unless (@flag_empty) %>
+    <div class='header'>Итоговая запись в базе данных</div>
+  	<table border='1'>
+	  	<caption>Ответ</caption>
+		  <tr>
+        <th>ID</th>
+			  <th>Палиндром</th>
+			  <th>Квадрат палиндрома</th>
+		  </tr>
+      <% @result_array.each_with_index do |elem, i| %>
+      <tr>
+        <td><%= @id[i] %></td>
+        <td><%= elem %></td>
+        <td><%= @square_array[i] %></td>
+      </tr>
+      <% end %>
+	  </table>
+  <% else %>
+    <div id='error'> База данных пуста! </div>
+  <% end %>
+
+  <%= link_to('Повторить', '/') %>
+</center>
